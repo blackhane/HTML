@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4_글자속성</title>
+    <!--
+        날짜 : 2022 09 20
+        이름 : 박진휘
+
+        font-size
+            글자의 크기를 조절
+            기본 사이즈는 16px
+        font-family
+            글자의 폰트를 변경
+            구글폰트를 이용하여 다양한 폰트사용
+        font-weight
+            폰트의 굵기를 조절
+    -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+        .box1 > div:nth-child(1) {font-size: 16px;}
+        .box1 > div:nth-child(2) {font-size: 32px;}
+        .box1 > div:nth-child(3) {font-size: 100%;}
+        .box1 > div:nth-child(4) {font-size: 200%;}
+        .box1 > div:nth-child(5) {font-size: 2em;}
+
+        .box2 > div {font-size: 32px;}
+        .box2 > div:nth-child(1) {font-family: '궁서체';}
+        .box2 > div:nth-child(2) {font-family: '굴림체';}
+        .box2 > div:nth-child(3) {font-family: 'Nanum Pen Script', cursive;}
+        .box2 > div:nth-child(4) {font-family: 'Nanum Brush Script', cursive;}
+        .box2 > div:nth-child(5) {font-family: 'Jua', sans-serif;}
+
+        .box3 > div:nth-child(1) {font-weight: 100;}
+        .box3 > div:nth-child(2) {font-weight: 200;}
+        .box3 > div:nth-child(3) {font-weight: 400;}
+        .box3 > div:nth-child(4) {font-weight: bold;}
+        .box3 > div:nth-child(5) {font-weight: bolder;}
+
+        .box4 > div:nth-child(1) {font: bold 16px '궁서체';}
+        .box4 > div:nth-child(2) {font: normal 32px '돋음';}
+        .box4 > div:nth-child(3) {font: bold 200% '고딕체';}
+        .box4 > div:nth-child(4) {font: normal 32px 'Jua';}
+        .box4 > div:nth-child(5) {font: normal 32px 'Nanum Pen Script';}
+
+        .box5 > p {
+            line-height: 16px;
+        }
+        .box5 > div {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            text-align: center;
+            /*텍스트가 위치한 공간의 높이로 line-height를 지정하면 수직 가운데 정렬*/
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h4>글자속성</h4>
+
+    <h4>font-size</h4>
+    <div class="box box1">
+        <div>Hello, 안녕하세요</div>
+        <div>Hello, 안녕하세요</div>
+        <div>Hello, 안녕하세요</div>
+        <div>Hello, 안녕하세요</div>
+        <div>Hello, 안녕하세요</div>
+    </div>
+
+    <h4>font-family</h4>
+    <div class="box box2">
+        <div>Hello, 안녕하세요</div>
+        <div>Hello, 안녕하세요</div>
+        <div>Hello, 안녕하세요</div>
+        <div>Hello, 안녕하세요</div>
+        <div>Hello, 안녕하세요</div>
+    </div>
+
+    <h4>font-weight</h4>
+    <div class="box box3">
+        <div>Hello, 안녕하세요</div>
+        <div>Hello, 안녕하세요</div>
+        <div>Hello, 안녕하세요</div>
+        <div>Hello, 안녕하세요</div>
+        <div>Hello, 안녕하세요</div>
+    </div>
+
+    <h4>font 통합</h4>
+    <div class="box box4">
+        <div>Hello, 안녕하세요</div>
+        <div>Hello, 안녕하세요</div>
+        <div>Hello, 안녕하세요</div>
+        <div>Hello, 안녕하세요</div>
+        <div>Hello, 안녕하세요</div>
+    </div>
+
+    <h4>line-height 속성</h4>
+    <div class="box box5">
+        <p>
+            동해물과<br> 
+            백두산이<br> 
+            마르고<br>
+            닳도록
+        </p>
+        <div>Hello World</div>
+    </div>
+</body>
+</html>

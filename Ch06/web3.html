@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 800px;
+            height: auto;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+        .link {
+            color: white;
+            list-style: none;
+            text-decoration: none;
+        }
+        header {
+            width: 100%;
+            height: 95px;
+            background: #2d3a4b;
+        }
+        header > a > img {
+            margin-top: 27px;
+            margin-left: 20px;
+        }
+        header > p {
+            float: right;
+            font-size: 12px;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        header > p > a:hover {color: #777;}
+        header > ul {
+            float: right;
+            margin-right: 60px;
+            margin-top: -20px;
+        }
+        header > ul > li {
+            float: left;
+            width: 100px;
+            text-align: center;
+        }
+        header > ul > li > a:hover {color: #777;}
+        main {
+            overflow: hidden;
+        }
+        main > div {
+            width: 800px;
+            height: auto;
+            padding-top: 10px;
+        }
+        main > div > article {
+            width: 400px;
+            height: 100px;
+            float: left;
+            text-align: center;
+        }
+        footer {
+            width: 100%;
+            height: 90px;
+            background: #f1f1f1;
+            box-sizing: border-box;
+        }
+        footer > img {
+            margin-left: 10px;
+            margin-top: 20px;
+        }
+        footer > p {
+            color: #605d5d;
+            text-align: left;
+            float: right;
+            font-size: 12px;
+            margin-right: 120px;
+            margin-top: 10px;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <a href="#"><img src="./images/logo.png" alt=""></a>
+            <p>
+                <a href="#" class="link">HOME |</a>
+                <a href="#" class="link">LOGIN |</a>
+                <a href="#" class="link">JOIN |</a>
+                <a href="#" class="link">NOTICE</a>
+            </p>
+            <ul class="link">
+                <li><a href="#" class="link">COMPANY</a></li>  
+                <li><a href="#" class="link">PRODUCT</a></li>  
+                <li><a href="#" class="link">CUSTOMER</a></li>  
+                <li><a href="#" class="link">SERVICE</a></li>  
+                <li><a href="#" class="link">RECRUIT</a></li>  
+            </ul>
+        </header>
+        <main>
+            <img src="./images/main_img.png" alt="">
+            <div>
+                <article>
+                    <a href="#" class="banner"><img src="./images/banner1.png" alt=""></a>
+                </article>
+                <article>
+                    <a href="#" class="banner"><img src="./images/banner2.png" alt=""></a>
+                </article>    
+            </div>
+        </main>
+        <footer>
+                <img src="./images/footer_logo.png" alt="">
+                <p>(주)포폴리오 / 부산시 부산진구 서면로 121 / 대표 : 홍길동 <br>
+                    사업자번호 : 123-4567-890 / 전화 : 1588-0000 / 이메일 : master@pofolio.com <br>
+                    <strong>ⓒprofolio Allrights reserved</strong>
+                </p>
+        </footer>
+    </div>
+    
+</body>
+</html>
