@@ -27,5 +27,3 @@
 - sub1.layout예제
 ## Ch06. 웹페이지
 - sub1.웹페이지 실습
-# HTML1
-# HTML
