@@ -27,3 +27,13 @@
 - sub1.layout예제
 ## Ch06. 웹페이지
 - sub1.웹페이지 실습
+## 실습
+- Board.게시판
+https://blackhane.github.io/HTML1/Board/user/login.html
+- Real113.부동산
+https://blackhane.github.io/HTML1/Real113/main.html
+- Tour.여행
+https://blackhane.github.io/HTML1/Tour/main.html
+- FoodShop.쇼핑
+https://blackhane.github.io/HTML1/FoodShop/main.html
+
