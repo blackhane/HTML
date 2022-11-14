@@ -8,6 +8,30 @@
     <script>
         $(document).ready(function(){
 
+            $('ul.tab li').click(function(){
+            let tab_id = $(this).attr('data-tab');
+
+            $('ul.tab li').removeClass('current');
+            $('.tab-content').removeClass('current');
+
+            $(this).addClass('current');
+            $("#"+tab_id).addClass('current');
+	        });
+
+            $(function(){
+            let slider = $('.slide > img');
+            let i = 0;
+
+            setInterval(function(){
+                slider.eq(i).animate({'left':'-100%'},1000);
+                i++;
+                if(i>=3){
+                    i=0;
+                }
+                slider.eq(i).css('left','100%').animate({'left':'0'},1000);
+            },5000);
+        });
+
         });
     </script>
 </head>
@@ -33,7 +57,9 @@
         <main>
             <div class="slider">
                 <div class="slide">
-                    <img src="./img/main_slide_img1.jpg" alt="슬라이더로고1">
+                    <img src="./img/main_slide_img1.jpg" alt="슬라이더1">
+                    <img src="./img/main_slide_img2.jpg" alt="슬라이더2">
+                    <img src="./img/main_slide_img3.jpg" alt="슬라이더3">
                 </div>
                 <img src="./img/main_slide_img_tit.png" alt="사람과자연을사랑하는팜스토리">
                 <div class="banner">
@@ -166,15 +192,31 @@
                 </div>
                 <div class="tabs">
                     <ul class="tab">
-                        <li class="tab-link current" data-tab="tab-1">1</li>
-                        <li class="tab-link" data-tab="tab-2">2</li>
-                        <li class="tab-link" data-tab="tab-3">3</li>
-                        <li class="tab-link" data-tab="tab-4">4</li>
+                        <li class="tab-link current" data-tab="tab-1">공지사항</li>
+                        <li class="tab-link" data-tab="tab-2">1:1 고객문의</li>
+                        <li class="tab-link" data-tab="tab-3">자주묻는질문</li>
                     </ul>
-                    <div id="tab-1" class="tab-content current">내용1</div>
-                    <div id="tab-2" class="tab-content">내용2</div>
-                    <div id="tab-3" class="tab-content">내용3</div>
-                    <div id="tab-4" class="tab-content">내용4</div>
+                    <div id="tab-1" class="tab-content current">
+                        <ul>
+                            <li>· 홈페이지 오픈 기념 이벤트를 진행합니다.</li>
+                            <li>· 홈페이지 오픈 기념 이벤트를 진행합니다.</li>
+                            <li>· 홈페이지 오픈 기념 이벤트를 진행합니다.</li>
+                        </ul>
+                    </div>
+                    <div id="tab-2" class="tab-content">
+                        <ul>
+                            <li>· 홈페이지 이용 관련 불편사항을 들려주세요.</li>
+                            <li>· 홈페이지 이용 관련 불편사항을 들려주세요.</li>
+                            <li>· 홈페이지 이용 관련 불편사항을 들려주세요.</li>
+                        </ul>
+                    </div>
+                    <div id="tab-3" class="tab-content">
+                        <ul>
+                            <li>· 홈페이지를 오픈하였습니다.</li>
+                            <li>· 홈페이지를 오픈하였습니다.</li>
+                            <li>· 홈페이지를 오픈하였습니다.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </main>

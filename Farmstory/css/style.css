@@ -91,8 +91,24 @@ main > .slider {
     position: relative;
     overflow: hidden;
 }
-main > .slider > .slid {
+main > .slider > .slide {
     max-width: 980px;
+    overflow: hidden;
+}
+main > .slider > .slide > img {
+    position: absolute;
+}
+main > .slider > .slide > img:nth-child(1) {
+    left: 0;
+    top: 0;
+}
+main > .slider > .slide > img:nth-child(2) {
+    left: 980px;
+    top: 0;
+}
+main > .slider > .slide > img:nth-child(3) {
+    left: 1960px;
+    top: 0;
 }
 main > .slider > img {
     position: absolute;
@@ -238,7 +254,39 @@ main > .info > .account > p {
     line-height: 18px;
     color: #666;
 }
-main > .info > .tab {}
+main > .info > .tabs {
+    padding-left: 10px;
+}
+main > .info .tab {
+    border-bottom: 1px solid #aaa;
+}
+main > .info .tab > li {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px;
+    color: #555;
+    background: #eee;
+    text-align: center;
+    line-height: 50%;
+    border: 1px solid #aaa;
+    border-bottom: none;
+}
+main > .info .tab > li.current {
+    background: #fff;
+    color: #212121;
+}
+main > .info .tab-content {
+    display: none;
+    color: #666;
+    padding: 10px;
+}
+main > .info .tab-content li {
+    border-bottom: 1px solid #d1d1d1;
+    line-height: 26px;
+}
+main > .info .tab-content.current {
+    display: inherit;
+}
 
 /*footer*/
 footer {
