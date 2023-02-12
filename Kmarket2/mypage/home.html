@@ -3,657 +3,355 @@
 <head>
     <meta charset="UTF-8">
     <title>케이마켓</title>
-    <style>
-        /*기본 설정*/
-        * {
-            padding: 0px;
-            margin: 0px;
-            font-size: normal 12px '고딕';
-            outline: none;
-        }
-        ul, ol {list-style: none;}
-        a {text-decoration: none;color: black;}
-        .wrap {
-            width: 100%;
-            height: auto;
-        }
-        /*마이페이지 홈*/
-        .info {
-            width: 100%;
-            height: auto;
-            background: #e8e8e8;
-            border-top: 1px solid #c9c9c9;
-            border-bottom: 1px solid #c9c9c9;
-            box-sizing: border-box;
-        }
-        .info > div{
-            width: 980px;
-            height: 120px;
-            margin: 0 auto;
-            box-sizing: border-box;
-        }
-        .info > div > a {
-            display: inline-block;
-            margin-top: 35px;
-        }
-        .info > div > ul {
-            float: right;
-            margin-top: 15px;
-        }
-        .info > div > ul > li {
-            float: left;
-            width: 110px;
-            height: 90px;
-            text-align: center;
-            border-right: 1px solid #c5c5c5;
-            border-left: 1px solid #fff;
-            font-size: 12px;
-            color: #888888;
-            box-sizing: border-box;
-            position: relative;
-            padding-top: 6px;
-        }
-        .info > div > ul > li:first-child {border-left: none;}
-        .info > div > ul > li:last-child {border-right: none;}
-        .info > div > ul > li > img {position: absolute;}
-        .info > div > ul > li > img.deli {top: 35px;right: 41px;}
-        .info > div > ul > li > img.coupon {top: 30px;right: 35px;}
-        .info > div > ul > li > img.point {top: 30px;right: 40px;}
-        .info > div > ul > li > img.qna {top: 30px;right: 38px;}
-        .info > div > ul > li > span {
-            width: 100px;
-            position: absolute;
-            text-align: center;
-            top: 63px;
-            right: 4px;
-        }
-        .home {
-            width: 980px;
-            height: auto;
-            margin: 0 auto;
-            box-sizing: border-box;
-            position: relative;
-        }
-        .home > .navi {
-        }
-        .home > .navi > .sprite {
-            position: absolute;
-            background: url('../img/myPage/my_sprites.png') no-repeat -160px -51px;
-            width: 8px;
-            height: 12px;
-            top: -12px;
-            left: 142px;
-        }
-        .home > .navi > ul {
-            position: absolute;
-            top: -12px;
-            text-align: left;
-            border: 1px solid #003262;
-        }
-        .home > .navi > ul > li {
-            line-height: 40px;
-            width: 140px;
-            height: 60px;
-            background: #006bff;
-            border-top: 1px solid #2681ff;
-            border-bottom: 1px solid #0056cd;
-        }
-        .home > .navi > ul > li > a {
-            display: inline-block;
-            text-indent: 12px;
-            line-height: 60px;
-            width: 100%;
-            height: 100%;
-            color: #fff;
-        }
-        .home > .navi > ul > li > a:hover {background: #0056cd;}
-        .home > section {
-            width: 839px;
-            height: auto;
-            margin-left: 141px;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-        .home > section > img {width: 810px; height: 86px;}
-        .home > section > div {
-            display: inline-block;
-            width: 810px;
-            height: auto;
-            margin-top: 22px;
-            box-sizing: border-box;
-            overflow: hidden;
-        }
-        .home > section > div > p {
-            float: left;
-            color: #444444;
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 6px;
-        }
-        .home > section > div > a {
-            float: right;
-            background: url('../img/myPage/my_sprites.png') no-repeat 0px -279px;
-            width: 35px;
-            height: 14px;
-            margin-top: 16px;
-        }
-        .home > section > div > table {
-            width: 810px;
-            height: auto;
-            border-collapse: collapse;
-        }
-        .home > section > div > table tr:last-child {border-bottom: 1px solid #aaaaaa;}
-        .home > section > div > table tr > th {
-            padding: 4px 0;
-            border-top: 2px solid #444444;
-            background: #a5a7a5;
-            color: #fff;
-            font: 13px normal;
-        }
-        .home > section > div > table tr > td {
-            height: 110px;
-            font-size: 12px;
-            padding: 10px;
-            box-sizing: border-box;
-            border-right: 1px solid #f1f1f1;
-        }
-        .home > section > div > table tr > td:last-child {border-right: none;}
-        .home > section > div > table.lastOrder tr > td > img {
-            float: left;
-            width: 80px;
-            height: 80px;
-            background: #888888;
-            margin-right:  10px;
-        }
-        .home > section > div > table.lastOrder tr > td:nth-child(1) {width: 15%;}
-        .home > section > div > table.lastOrder tr > td:nth-child(2) {width: 55%;}
-        .home > section > div > table.lastOrder tr > td:nth-child(3) {width: 15%;}
-        .home > section > div > table.lastOrder tr > td:nth-child(4) {width: 15%;}
-        .home > section > div > table.lastOrder tr > td:nth-child(4) > ul > li {
-            background: url("../img/myPage/my_sprites.png") no-repeat;
-            font-size: 0;
-            width: 90px;
-            height: 19px;
-            margin-top: 2px;
-        }
-        .home > section > div > table.lastOrder tr > td:nth-child(4) > ul > li:nth-child(1) {background-position: -369px -179px;}
-        .home > section > div > table.lastOrder tr > td:nth-child(4) > ul > li:nth-child(2) {background-position: -369px -203px;}
-        .home > section > div > table.lastOrder tr > td:nth-child(4) > ul > li:nth-child(3) {background-position: -369px -265px;
-            font-family: '돋움';
-            font-size: 11px;
-            color: #676767;
-            text-indent: 5px;
-            line-height: 19px;
-        }
-        .home > section > div > table.lastOrder tr > td:nth-child(4) > ul > li:nth-child(4) {background-position: -369px -265px;
-            font-family: '돋움';
-            font-size: 11px;
-            color: #676767;
-            text-indent: 5px;
-            line-height: 19px;
-            margin-top: 3px;
-        }
-        .lastOrder tr > td:nth-child(4) > ul > li > a {
-            display: inline-block;
-            width: 100%;
-            height: 20px;
-        }
-        .home > section > div > table.lastPoint tr > td {
-            height: 35px;
-        }
-        .home > section > div > table.lastComment tr > td {
-            height: 35px;
-        }
-        .home > section > div > table.lastComment tr > td:nth-child(1) {width: 7%;}
-        .home > section > div > table.lastComment tr > td:nth-child(4) {width: 4%;}
-        .home > section > div > table.lastComment tr > td:nth-child(5) {width: 11%;}
-        .home > section > div > table.lastComment tr > td:nth-child(4) > span {
-            display: block;
-            background: url('../img/myPage/my_rating_star.png') no-repeat;
-            width: 83px;
-            height: 15px;
-        }
-        .home > section > div > table.lastComment tr > td:nth-child(4) > span.star1 {background-position: 0px -40px;}
-        .home > section > div > table.lastComment tr > td:nth-child(4) > span.star2 {background-position: 0px -40px;}
-        .home > section > div > table.lastComment tr > td:nth-child(4) > span.star3 {background-position: 0px -80px;}
-        .home > section > div > table.lastComment tr > td:nth-child(4) > span.star4 {background-position: 0px -120px;}
-        .home > section > div > table.lastComment tr > td:nth-child(4) > span.star5 {background-position: 0px -160px;}
-        .home > section > div > table.lastQna tr > td {height: 35px;}
-        .home > section > div > table.lastQna tr > td.wait {color: #999999;}
-        .home > section > div > table.lastQna tr > td.ok {color: #01a900;}
-        .home > section > div > span {
-            display: inline-block;
-            background: url('../img/myPage/my_sprites.png') no-repeat -144px -281px;
-            width: 96px;
-            height: 15px;
-            margin-bottom: 6px;
-        }
-        .home > section > div > .setting {
-            overflow: hidden;
-        }
-        .home > section > div > .setting > div {
-            float: left;
-            width: 33.33%;
-            height: 105px;
-            background: #f5f5f5;
-            border: 1px solid #e5e5e5;
-            padding-top: 20px;
-            padding-left: 16px;
-            box-sizing: border-box;
-        }
-        .home > section > div > .setting > div:nth-child(2){border-left: none; border-right: none;}
-        .home > section > div > .setting > div > span {
-            display: inline-block;
-            background: url("../img/myPage/my_sprites.png") no-repeat;
-	        height: 11px;
-            margin-bottom: 6px;
-        }
-        .home > section > div > .setting > div:nth-child(1) > span {background-position: -499px -179px; width: 76px;}
-        .home > section > div > .setting > div:nth-child(2) > span {background-position: -498px -202px; width: 58px;}
-        .home > section > div > .setting > div:nth-child(3) > span {background-position: -499px -227px; width: 80px;}
-        .home > section > div > .setting > div > a {
-            display: inline-block;
-            background: url("../img/myPage/my_sprites.png") no-repeat -423px -822px;
-            width: 76px;
-	        height: 11px;
-            margin-bottom: 6px;
-        }
-        .home > section > div > .setting > div > p {
-            font-size: 12px;
-            color: #999999;
-            line-height: 20px;
-        }
-        /*Footer*/
-        footer {
-            width: 100%;
-            height: auto;
-            background-color: #f8f8f8;
-            border-top: 1px solid #e9e9e9;
-        }
-        footer > div {
-            width: 1200px;
-            margin: 0 auto;
-            box-sizing: border-box;
-        }
-        footer > div:first-child {
-            text-align: center;
-            padding: 10px 0;
-        }
-        footer > div:first-child > a {
-            display: inline-block;
-            text-align: center;
-            font-size: 12px;
-        }
-        .footerlogo {
-            overflow: hidden;
-            border-top: 1px solid #e9e9e9;
-            padding-top: 25px;
-        }
-        .footerlogo > img {
-            float: left;
-            margin-right: 14px;
-        }
-        .footerlogo > div {
-            float: left;
-            font-size: 12px;
-            line-height: 10px;
-            width: 26%;
-            margin-left: 20px;
-        }
-        .footerlogo > div > span {
-            display: inline-block;
-            color: #464646;
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 16px;
-        }
-        .footerlogo > div > p {color: #676767;}
-    </style>
+    <link rel="stylesheet" href="../css/mypage_style.css">
 </head>
 <body>
-    <main>
-        <div class="info">
-            <div>
-                <a href="#">
-                    <img src="../img/myPage/my_logo.jpg" alt="마이페이지">
-                </a>
-                <ul>
-                    <li>주문·배송
-                        <img class="deli" src="../img/myPage/ico_delivery.png" alt="주문배송">
-                        <span>100</span>
-                    </li>
-                    <li>할인쿠폰
-                        <img class="coupon" src="../img/myPage/ico_coupon.jpg" alt="할인쿠폰">
-                        <span>10</span>
-                    </li>
-                    <li>포인트
-                        <img class="point" src="../img/myPage/ico_point.jpg" alt="포인트">
-                        <span>1,000</span>
-                    </li>
-                    <li>문의내역
-                        <img class="qna" src="../img/myPage/ico_qna.png" alt="문의내역">
-                        <span>6</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="home">
-            <article class="navi">
-                <div class="sprite"></div>
-                <ul>
-                    <li><a href="#">전체주문내역</a></li>
-                    <li><a href="#">포인트내역</a></li>
-                    <li><a href="#">쿠폰</a></li>
-                    <li><a href="#">나의리뷰</a></li>
-                    <li><a href="#">문의하기</a></li>
-                    <li><a href="#">나의설정</a></li>
-                </ul>
-            </article>
-            <section>
-                <img src="../img/myPage/my_banner1.jpg" alt="배너">
+    <div id="wrap">
+        <header></header>
+        <main>
+            <div class="info">
                 <div>
-                    <p>최근주문내역</p>
-                    <a href="#"></a>
-                    <table class="lastOrder">
-                        <tr>
-                            <th>날짜</th>
-                            <th>상품정보</th>
-                            <th>상태</th>
-                            <th>확인/신청</th>
-                        </tr>
-                        <tr>
-                            <td>2023-02-10</td>
-                            <td>
-                                <img src="#" alt="상품이미지">
-                                <div>
-                                    상호명 : <br/>
-                                    상품명 : <br/>
-                                    수량 : 1개 / 주문번호 :1012211341 <br/>
-                                    34,000원
-                                </div>
-                            </td>
-                            <td>배송완료</td>
-                            <td>
-                                <ul>
-                                    <li><a href="#">수취확인</a></li>
-                                    <li><a href="#">상품평쓰기</a></li>
-                                    <li><a href="#">반품신청</a></li>
-                                    <li><a href="#">교환신청</a></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2023-02-10</td>
-                            <td>
-                                <img src="#" alt="상품이미지">
-                                <div>
-                                    상호명 : <br/>
-                                    상품명 : <br/>
-                                    수량 : 1개 / 주문번호 :1012211341 <br/>
-                                    34,000원
-                                </div>
-                            </td>
-                            <td>배송완료</td>
-                            <td>
-                                <ul>
-                                    <li><a href="#">수취확인</a></li>
-                                    <li><a href="#">상품평쓰기</a></li>
-                                    <li><a href="#">반품신청</a></li>
-                                    <li><a href="#">교환신청</a></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2023-02-10</td>
-                            <td>
-                                <img src="#" alt="상품이미지">
-                                <div>
-                                    상호명 : <br/>
-                                    상품명 : <br/>
-                                    수량 : 1개 / 주문번호 :1012211341 <br/>
-                                    34,000원
-                                </div>
-                            </td>
-                            <td>배송완료</td>
-                            <td>
-                                <ul>
-                                    <li><a href="#">수취확인</a></li>
-                                    <li><a href="#">상품평쓰기</a></li>
-                                    <li><a href="#">반품신청</a></li>
-                                    <li><a href="#">교환신청</a></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2023-02-10</td>
-                            <td>
-                                <img src="#" alt="상품이미지">
-                                <div>
-                                    상호명 : <br/>
-                                    상품명 : <br/>
-                                    수량 : 1개 / 주문번호 :1012211341 <br/>
-                                    34,000원
-                                </div>
-                            </td>
-                            <td>배송완료</td>
-                            <td>
-                                <ul>
-                                    <li><a href="#">수취확인</a></li>
-                                    <li><a href="#">상품평쓰기</a></li>
-                                    <li><a href="#">반품신청</a></li>
-                                    <li><a href="#">교환신청</a></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2023-02-10</td>
-                            <td>
-                                <img src="#" alt="상품이미지">
-                                <div>
-                                    상호명 : <br/>
-                                    상품명 : <br/>
-                                    수량 : 1개 / 주문번호 :1012211341 <br/>
-                                    34,000원
-                                </div>
-                            </td>
-                            <td>배송완료</td>
-                            <td>
-                                <ul>
-                                    <li><a href="#">수취확인</a></li>
-                                    <li><a href="#">상품평쓰기</a></li>
-                                    <li><a href="#">반품신청</a></li>
-                                    <li><a href="#">교환신청</a></li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div>
-                    <p>포인트적립내역</p>
-                    <a href="#"></a>
-                    <table class="lastPoint">
-                        <tr>
-                            <th>날짜</th>
-                            <th>구분</th>
-                            <th>주문번호</th>
-                            <th>적립금액</th>
-                            <th>비고</th>
-                            <th>유효기간</th>
-                        </tr>
-                        <tr>
-                            <td>2023-02-10</td>
-                            <td>적립</td>
-                            <td>2022121001</td>
-                            <td>340</td>
-                            <td>상품 구매확정</td>
-                            <td>2024-12-10</td>
-                        </tr>
-                        <tr>
-                            <td>2023-02-10</td>
-                            <td>적립</td>
-                            <td>2022121001</td>
-                            <td>340</td>
-                            <td>상품 구매확정</td>
-                            <td>2024-12-10</td>
-                        </tr>
-                        <tr>
-                            <td>2023-02-10</td>
-                            <td>적립</td>
-                            <td>2022121001</td>
-                            <td>340</td>
-                            <td>상품 구매확정</td>
-                            <td>2024-12-10</td>
-                        </tr>
-                        <tr>
-                            <td>2023-02-10</td>
-                            <td>적립</td>
-                            <td>2022121001</td>
-                            <td>340</td>
-                            <td>상품 구매확정</td>
-                            <td>2024-12-10</td>
-                        </tr>
-                        <tr>
-                            <td>2023-02-10</td>
-                            <td>적립</td>
-                            <td>2022121001</td>
-                            <td>340</td>
-                            <td>상품 구매확정</td>
-                            <td>2024-12-10</td>
-                        </tr>
-                    </table>
-                </div>
-                <div>
-                    <p>상품평</p>
-                    <a href="#"></a>
-                    <table class="lastComment">
-                        <tr>
-                            <th>번호</th>
-                            <th>상품명</th>
-                            <th>내용</th>
-                            <th>평점</th>
-                            <th>작성일</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>상품명</td>
-                            <td>배송이 빠릅니다. 잘 사용하겠습니다.</td>
-                            <td><span class="star1"></span></td>
-                            <td>2022-12-10</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>상품명</td>
-                            <td>배송이 빠릅니다. 잘 사용하겠습니다.</td>
-                            <td><span class="star2"></span></td>
-                            <td>2022-12-10</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>상품명</td>
-                            <td>배송이 빠릅니다. 잘 사용하겠습니다.</td>
-                            <td><span class="star3"></span></td>
-                            <td>2022-12-10</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>상품명</td>
-                            <td>배송이 빠릅니다. 잘 사용하겠습니다.</td>
-                            <td><span class="star4"></span></td>
-                            <td>2022-12-10</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>상품명</td>
-                            <td>배송이 빠릅니다. 잘 사용하겠습니다.</td>
-                            <td><span class="star5"></span></td>
-                            <td>2022-12-10</td>
-                        </tr>
-                    </table>
-                </div>
-                <div>
-                    <p>문의내역</p>
-                    <a href="#">
+                    <a href="./home.html">
+                        <img src="../img/myPage/my_logo.jpg" alt="마이페이지">
                     </a>
-                    <table class="lastQna">
-                        <tr>
-                            <th>번호</th>
-                            <th>문의채널</th>
-                            <th>문의유형</th>
-                            <th>제목</th>
-                            <th>작성일</th>
-                            <th>상태</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>고객센터</td>
-                            <td>주문/결제</td>
-                            <td>신용카드 결제 중 오류가 난 경우 어떻게 하나요?</td>
-                            <td>2022-12-10</td>
-                            <td class="wait">검토중</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>고객센터</td>
-                            <td>주문/결제</td>
-                            <td>신용카드 결제 중 오류가 난 경우 어떻게 하나요?</td>
-                            <td>2022-12-10</td>
-                            <td class="ok">답변완료</td>
-                        </tr>
-                    </table>
+                    <ul>
+                        <li>주문·배송
+                            <img class="deli" src="../img/myPage/ico_delivery.png" alt="주문배송">
+                            <span>100</span>
+                        </li>
+                        <li>할인쿠폰
+                            <img class="coupon" src="../img/myPage/ico_coupon.jpg" alt="할인쿠폰">
+                            <span>10</span>
+                        </li>
+                        <li>포인트
+                            <img class="point" src="../img/myPage/ico_point.jpg" alt="포인트">
+                            <span>1,000</span>
+                        </li>
+                        <li>문의내역
+                            <img class="qna" src="../img/myPage/ico_qna.png" alt="문의내역">
+                            <span>6</span>
+                        </li>
+                    </ul>
                 </div>
-                <div>
-                    <span></span>
-                    <div class="setting">
-                        <div>
-                            <span></span>
-                            <a href="#"></a>
-                            <p></p>
-                        </div>
-                        <div>
-                            <span></span>
-                            <a href="#"></a>
-                            <p>
-                                abc123@gmail.com<br/>
-                                (최종수정일 2021-12-10)
-                            </p>
-                        </div>
-                        <div>
-                            <span></span>
-                            <a href="#"></a>
-                            <p>
-                                000-1111-2222<br/>
-                                (최종수정일 2021-12-10)
-                            </p>
+            </div>
+            <div class="home">
+                <article class="navi">
+                    <div class="sprite"></div>
+                    <ul>
+                        <li><a href="./ordered.html">전체주문내역</a></li>
+                        <li><a href="./point.html">포인트내역</a></li>
+                        <li><a href="./coupon.html">쿠폰</a></li>
+                        <li><a href="./review.html">나의리뷰</a></li>
+                        <li><a href="./qna.html">문의하기</a></li>
+                        <li><a href="./info.html">나의설정</a></li>
+                    </ul>
+                </article>
+                <section>
+                    <img src="../img/myPage/my_banner1.jpg" alt="배너">
+                    <div>
+                        <p>최근주문내역</p>
+                        <a href="#"></a>
+                        <table class="lastOrder">
+                            <tr>
+                                <th>날짜</th>
+                                <th>상품정보</th>
+                                <th>상태</th>
+                                <th>확인/신청</th>
+                            </tr>
+                            <tr>
+                                <td>2023-02-10</td>
+                                <td>
+                                    <img src="#" alt="상품이미지">
+                                    <div>
+                                        상호명 : <br/>
+                                        상품명 : <br/>
+                                        수량 : 1개 / 주문번호 :1012211341 <br/>
+                                        34,000원
+                                    </div>
+                                </td>
+                                <td>배송완료</td>
+                                <td>
+                                    <ul>
+                                        <li><a href="#">수취확인</a></li>
+                                        <li><a href="#">상품평쓰기</a></li>
+                                        <li><a href="#">반품신청</a></li>
+                                        <li><a href="#">교환신청</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2023-02-10</td>
+                                <td>
+                                    <img src="#" alt="상품이미지">
+                                    <div>
+                                        상호명 : <br/>
+                                        상품명 : <br/>
+                                        수량 : 1개 / 주문번호 :1012211341 <br/>
+                                        34,000원
+                                    </div>
+                                </td>
+                                <td>배송완료</td>
+                                <td>
+                                    <ul>
+                                        <li><a href="#">수취확인</a></li>
+                                        <li><a href="#">상품평쓰기</a></li>
+                                        <li><a href="#">반품신청</a></li>
+                                        <li><a href="#">교환신청</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2023-02-10</td>
+                                <td>
+                                    <img src="#" alt="상품이미지">
+                                    <div>
+                                        상호명 : <br/>
+                                        상품명 : <br/>
+                                        수량 : 1개 / 주문번호 :1012211341 <br/>
+                                        34,000원
+                                    </div>
+                                </td>
+                                <td>배송완료</td>
+                                <td>
+                                    <ul>
+                                        <li><a href="#">수취확인</a></li>
+                                        <li><a href="#">상품평쓰기</a></li>
+                                        <li><a href="#">반품신청</a></li>
+                                        <li><a href="#">교환신청</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2023-02-10</td>
+                                <td>
+                                    <img src="#" alt="상품이미지">
+                                    <div>
+                                        상호명 : <br/>
+                                        상품명 : <br/>
+                                        수량 : 1개 / 주문번호 :1012211341 <br/>
+                                        34,000원
+                                    </div>
+                                </td>
+                                <td>배송완료</td>
+                                <td>
+                                    <ul>
+                                        <li><a href="#">수취확인</a></li>
+                                        <li><a href="#">상품평쓰기</a></li>
+                                        <li><a href="#">반품신청</a></li>
+                                        <li><a href="#">교환신청</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2023-02-10</td>
+                                <td>
+                                    <img src="#" alt="상품이미지">
+                                    <div>
+                                        상호명 : <br/>
+                                        상품명 : <br/>
+                                        수량 : 1개 / 주문번호 :1012211341 <br/>
+                                        34,000원
+                                    </div>
+                                </td>
+                                <td>배송완료</td>
+                                <td>
+                                    <ul>
+                                        <li><a href="#">수취확인</a></li>
+                                        <li><a href="#">상품평쓰기</a></li>
+                                        <li><a href="#">반품신청</a></li>
+                                        <li><a href="#">교환신청</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <p>포인트적립내역</p>
+                        <a href="#"></a>
+                        <table class="lastPoint">
+                            <tr>
+                                <th>날짜</th>
+                                <th>구분</th>
+                                <th>주문번호</th>
+                                <th>적립금액</th>
+                                <th>비고</th>
+                                <th>유효기간</th>
+                            </tr>
+                            <tr>
+                                <td>2023-02-10</td>
+                                <td>적립</td>
+                                <td>2022121001</td>
+                                <td>340</td>
+                                <td>상품 구매확정</td>
+                                <td>2024-12-10</td>
+                            </tr>
+                            <tr>
+                                <td>2023-02-10</td>
+                                <td>적립</td>
+                                <td>2022121001</td>
+                                <td>340</td>
+                                <td>상품 구매확정</td>
+                                <td>2024-12-10</td>
+                            </tr>
+                            <tr>
+                                <td>2023-02-10</td>
+                                <td>적립</td>
+                                <td>2022121001</td>
+                                <td>340</td>
+                                <td>상품 구매확정</td>
+                                <td>2024-12-10</td>
+                            </tr>
+                            <tr>
+                                <td>2023-02-10</td>
+                                <td>적립</td>
+                                <td>2022121001</td>
+                                <td>340</td>
+                                <td>상품 구매확정</td>
+                                <td>2024-12-10</td>
+                            </tr>
+                            <tr>
+                                <td>2023-02-10</td>
+                                <td>적립</td>
+                                <td>2022121001</td>
+                                <td>340</td>
+                                <td>상품 구매확정</td>
+                                <td>2024-12-10</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <p>상품평</p>
+                        <a href="#"></a>
+                        <table class="lastComment">
+                            <tr>
+                                <th>번호</th>
+                                <th>상품명</th>
+                                <th>내용</th>
+                                <th>평점</th>
+                                <th>작성일</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>상품명</td>
+                                <td>배송이 빠릅니다. 잘 사용하겠습니다.</td>
+                                <td><span class="star1"></span></td>
+                                <td>2022-12-10</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>상품명</td>
+                                <td>배송이 빠릅니다. 잘 사용하겠습니다.</td>
+                                <td><span class="star2"></span></td>
+                                <td>2022-12-10</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>상품명</td>
+                                <td>배송이 빠릅니다. 잘 사용하겠습니다.</td>
+                                <td><span class="star3"></span></td>
+                                <td>2022-12-10</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>상품명</td>
+                                <td>배송이 빠릅니다. 잘 사용하겠습니다.</td>
+                                <td><span class="star4"></span></td>
+                                <td>2022-12-10</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>상품명</td>
+                                <td>배송이 빠릅니다. 잘 사용하겠습니다.</td>
+                                <td><span class="star5"></span></td>
+                                <td>2022-12-10</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <p>문의내역</p>
+                        <a href="#">
+                        </a>
+                        <table class="lastQna">
+                            <tr>
+                                <th>번호</th>
+                                <th>문의채널</th>
+                                <th>문의유형</th>
+                                <th>제목</th>
+                                <th>작성일</th>
+                                <th>상태</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>고객센터</td>
+                                <td>주문/결제</td>
+                                <td>신용카드 결제 중 오류가 난 경우 어떻게 하나요?</td>
+                                <td>2022-12-10</td>
+                                <td class="wait">검토중</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>고객센터</td>
+                                <td>주문/결제</td>
+                                <td>신용카드 결제 중 오류가 난 경우 어떻게 하나요?</td>
+                                <td>2022-12-10</td>
+                                <td class="ok">답변완료</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <span></span>
+                        <div class="setting">
+                            <div>
+                                <span></span>
+                                <a href="#"></a>
+                                <p></p>
+                            </div>
+                            <div>
+                                <span></span>
+                                <a href="#"></a>
+                                <p>
+                                    abc123@gmail.com<br/>
+                                    (최종수정일 2021-12-10)
+                                </p>
+                            </div>
+                            <div>
+                                <span></span>
+                                <a href="#"></a>
+                                <p>
+                                    000-1111-2222<br/>
+                                    (최종수정일 2021-12-10)
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div>
-            <a href="#">| 회사소개 </a>
-            <a href="#">| 서비스이용약관 </a>
-            <a href="#">| 개인정보이용방침 </a>
-            <a href="#">| 전자금융거래약관 |</a>
-        </div>
-        <div class="footerlogo">
-            <img src="../img/myPage/footer_logo.png" alt="FooterLogo">
+            </section>
+        </main>
+        <footer>
             <div>
-                <span>(주)KMARKET</span>
-                <p>부산시 강남구 테헤란로 152 (역삼동 강남파이낸스센터)</p><br/>
-                <p>대표이사 : 홍길동</p><br/>
-                <p>사업자등록번호 : 220-81-83676 사업자정보확인</p><br/>
-                <p>통신판매업신고 : 강남 10620호 Fax : 02-589-8842</p><br/>
+                <a href="#">| 회사소개 </a>
+                <a href="#">| 서비스이용약관 </a>
+                <a href="#">| 개인정보이용방침 </a>
+                <a href="#">| 전자금융거래약관 |</a>
             </div>
-            <div>
-                <span>고객센터</span>
-                <p>Tel : 1234-5678 (평일 09:00~18:00)</p><br/>
-                <p>스마일클럽/SVIP 전용 : 1522-5700 (365일 09:00~18:00)</p><br/>
-                <p>경기도 부천시 원미구 부일로 223(상동) 투나빌딩 6층</p><br/>
-                <p>Fax : 051-123-4567 | Mail : Kamrket@Kmarket.co.kr</p><br/>
+            <div class="footerlogo">
+                <img src="../img/myPage/footer_logo.png" alt="FooterLogo">
+                <div>
+                    <span>(주)KMARKET</span>
+                    <p>부산시 강남구 테헤란로 152 (역삼동 강남파이낸스센터)</p><br/>
+                    <p>대표이사 : 홍길동</p><br/>
+                    <p>사업자등록번호 : 220-81-83676 사업자정보확인</p><br/>
+                    <p>통신판매업신고 : 강남 10620호 Fax : 02-589-8842</p><br/>
+                </div>
+                <div>
+                    <span>고객센터</span>
+                    <p>Tel : 1234-5678 (평일 09:00~18:00)</p><br/>
+                    <p>스마일클럽/SVIP 전용 : 1522-5700 (365일 09:00~18:00)</p><br/>
+                    <p>경기도 부천시 원미구 부일로 223(상동) 투나빌딩 6층</p><br/>
+                    <p>Fax : 051-123-4567 | Mail : Kamrket@Kmarket.co.kr</p><br/>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 </html>
